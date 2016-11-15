@@ -48,6 +48,7 @@
 		486E04AF1DDB3AD900DE4087 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 486E04A01DDB3AD900DE4087 /* UIImageView+WebCache.m */; };
 		486E04B01DDB3AD900DE4087 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 486E04A21DDB3AD900DE4087 /* UIView+WebCacheOperation.m */; };
 		486E04B31DDB3BA400DE4087 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 486E04B21DDB3BA400DE4087 /* Model.m */; };
+		486E04B71DDB423800DE4087 /* MyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 486E04B61DDB423800DE4087 /* MyModel.m */; };
 		487991C01DD85B010058158B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 487991BF1DD85B010058158B /* main.m */; };
 		487991C31DD85B010058158B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 487991C21DD85B010058158B /* AppDelegate.m */; };
 		487991C61DD85B010058158B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487991C51DD85B010058158B /* ViewController.m */; };
@@ -147,6 +148,8 @@
 		486E04A21DDB3AD900DE4087 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		486E04B11DDB3BA400DE4087 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = 3rd/Model.h; sourceTree = "<group>"; };
 		486E04B21DDB3BA400DE4087 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model.m; path = 3rd/Model.m; sourceTree = "<group>"; };
+		486E04B51DDB423800DE4087 /* MyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyModel.h; sourceTree = "<group>"; };
+		486E04B61DDB423800DE4087 /* MyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModel.m; sourceTree = "<group>"; };
 		487991BB1DD85B010058158B /* com.rock.VideoGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.rock.VideoGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		487991BF1DD85B010058158B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		487991C11DD85B010058158B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -360,6 +363,8 @@
 				48FB31D21DD9E9FB00B824AD /* FirstTableViewCell.h */,
 				48FB31D31DD9E9FB00B824AD /* FirstTableViewCell.m */,
 				48FB31D41DD9E9FB00B824AD /* FirstTableViewCell.xib */,
+				486E04B51DDB423800DE4087 /* MyModel.h */,
+				486E04B61DDB423800DE4087 /* MyModel.m */,
 			);
 			path = com.rock.VideoGuide;
 			sourceTree = "<group>";
@@ -474,6 +479,7 @@
 				486E04AC1DDB3AD900DE4087 /* UIImage+GIF.m in Sources */,
 				486E047B1DDB34FE00DE4087 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				486E04791DDB34FE00DE4087 /* AFAutoPurgingImageCache.m in Sources */,
+				486E04B71DDB423800DE4087 /* MyModel.m in Sources */,
 				486E04771DDB34FE00DE4087 /* NetWorkUikits.m in Sources */,
 				48FB31D51DD9E9FB00B824AD /* FirstTableViewCell.m in Sources */,
 				486E04AF1DDB3AD900DE4087 /* UIImageView+WebCache.m in Sources */,
