@@ -408,7 +408,7 @@
 				TargetAttributes = {
 					487991BA1DD85B010058158B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = ECXU495BLB;
+						DevelopmentTeam = 398SEH57CU;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -619,13 +619,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ECXU495BLB;
+				DEVELOPMENT_TEAM = 398SEH57CU;
 				INFOPLIST_FILE = com.rock.VideoGuide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rock.com-rock-VideoGuide";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "dd257c81-b2ba-4df9-9d17-c826805c0551";
-				PROVISIONING_PROFILE_SPECIFIER = house_general_develop;
+				PROVISIONING_PROFILE = "3d413d7c-8ad5-4b65-8401-61a2dba08661";
+				PROVISIONING_PROFILE_SPECIFIER = com_rock_wide_dev;
 			};
 			name = Debug;
 		};

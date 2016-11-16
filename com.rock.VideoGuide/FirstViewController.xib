@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ITk-u4-qaf">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="612"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="P2A-Eh-9xo"/>
@@ -34,7 +34,7 @@
                 <constraint firstItem="ITk-u4-qaf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0OQ-Gl-ros"/>
                 <constraint firstAttribute="trailing" secondItem="ITk-u4-qaf" secondAttribute="trailing" id="Uj3-2D-Lfj"/>
                 <constraint firstItem="ITk-u4-qaf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="t9v-I6-dju"/>
-                <constraint firstAttribute="bottom" secondItem="ITk-u4-qaf" secondAttribute="bottom" id="tJl-xA-ItC"/>
+                <constraint firstAttribute="bottom" secondItem="ITk-u4-qaf" secondAttribute="bottom" constant="55" id="tJl-xA-ItC"/>
             </constraints>
         </view>
     </objects>

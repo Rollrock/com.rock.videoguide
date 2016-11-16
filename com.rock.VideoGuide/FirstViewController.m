@@ -28,7 +28,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.tableView.rowHeight = 80;
+    self.tableView.rowHeight = 70;
+    [self.tableView setTableFooterView:[UIView new]];
     
     [self getVideoReq];
 }

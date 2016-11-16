@@ -33,6 +33,7 @@
     {
         _advertVC = [AdvertViewController new];
         _advertVC.tabBarItem.title = @"setting";
+        _advertVC.tabBarItem.image = [UIImage imageNamed:@"tab_setting"];
     }
     
     return _advertVC;
@@ -44,22 +45,11 @@
     {
         _firstVC = [FirstViewController new];
         _firstVC.title = @"Newest";
+        _firstVC.tabBarItem.image = [UIImage imageNamed:@"tab_newest"];
     }
     
     return _firstVC;
 }
-
--(UINavigationController*)firstNav
-{
-    if( !_firstNav )
-    {
-        _firstNav = [[UINavigationController alloc]initWithRootViewController:self.firstVC];
-        _firstNav.tabBarItem.title = @"Newest";
-        
-    }
-    return _firstNav;
-}
-
 
 -(SecondViewController*)secondVC
 {
@@ -67,6 +57,7 @@
     {
         _secondVC = [SecondViewController new];
         _secondVC.title = @"Hottest";
+        _secondVC.tabBarItem.image = [UIImage imageNamed:@"tab_hot"];
     }
     
     return _secondVC;
