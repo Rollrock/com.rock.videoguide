@@ -21,6 +21,8 @@
 @property(strong,nonatomic) ThirdViewController * thirdVC;
 @property(strong,nonatomic) AdvertViewController * advertVC;
 
+@property(strong,nonatomic) UINavigationController * firstNav;
+
 @end
 
 @implementation AppDelegate
@@ -41,21 +43,35 @@
     if( !_firstVC )
     {
         _firstVC = [FirstViewController new];
-        _firstVC.tabBarItem.title = @"Newest";
+        _firstVC.title = @"Newest";
     }
     
     return _firstVC;
 }
+
+-(UINavigationController*)firstNav
+{
+    if( !_firstNav )
+    {
+        _firstNav = [[UINavigationController alloc]initWithRootViewController:self.firstVC];
+        _firstNav.tabBarItem.title = @"Newest";
+        
+    }
+    return _firstNav;
+}
+
+
 -(SecondViewController*)secondVC
 {
     if( !_secondVC )
     {
         _secondVC = [SecondViewController new];
-        _secondVC.tabBarItem.title = @"Hottest";
+        _secondVC.title = @"Hottest";
     }
     
     return _secondVC;
 }
+
 -(ThirdViewController*)thirdVC
 {
     if( !_thirdVC )
@@ -73,7 +89,6 @@
     {
         _tabVC = [UITabBarController new];
         _tabVC.viewControllers = @[self.firstVC,self.secondVC,self.advertVC];
-        
     }
     
     return _tabVC;
@@ -81,11 +96,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
-    self.window.rootViewController = self.tabVC;
+    UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:self.tabVC];
+    
+    self.window.rootViewController = nav;
     
     [self.window makeKeyWindow];
     

@@ -15,12 +15,15 @@
 
 @interface VideoModel : NSObject
 
-@property(strong,nonatomic) NSString * imageUrl;
-@property(strong,nonatomic) NSString * name;
-@property(strong,nonatomic) NSString * uploadTime;
-@property(strong,nonatomic) NSString * hot;
-@property(strong,nonatomic) NSString * down;
-@property(strong,nonatomic) NSString * time;
+@property(copy,nonatomic) NSString * imageUrl;
+@property(copy,nonatomic) NSString * name;
+@property(copy,nonatomic) NSString * uploadTime;
+@property(copy,nonatomic) NSString * hot;
+@property(copy,nonatomic) NSString * down;
+@property(copy,nonatomic) NSString * time;
+@property(copy,nonatomic) NSString * downUrl;
+@property(copy,nonatomic) NSString * videoUrl;
+
 +(id)modelFromDict:(NSDictionary*)dict;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "FirstTableViewCell.h"
+#import "UIImageView+WebCache.h"
 
 @interface FirstTableViewCell()
 
@@ -31,6 +32,16 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void)refresCell:(VideoModel*)model
+{
+    [self.iconImgView sd_setImageWithURL:[NSURL URLWithString:model.imageUrl]];
+    self.nameLab.text = model.name;
+    self.uploadTimeLab.text = model.uploadTime;
+    self.hotLab.text = model.hot;
+    self.downLab.text = model.down;
+    self.timeLab.text = model.time;
 }
 
 

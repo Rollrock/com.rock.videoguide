@@ -19,12 +19,14 @@
 {
     VideoModel * m = [VideoModel new];
     
-    m.imageUrl = dict[@"imageUrl"];
+    m.imageUrl = dict[@"iconImgView"];
     m.name = dict[@"name"];
     m.uploadTime = dict[@"uploadTime"];
     m.hot = dict[@"hot"];
     m.down = dict[@"down"];
     m.time = dict[@"time"];
+    m.downUrl = dict[@"downUrl"];
+    m.videoUrl = dict[@"videoUrl"];
     
     return m;
 }

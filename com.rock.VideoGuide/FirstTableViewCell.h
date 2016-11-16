@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MyModel.h"
 
 @interface FirstTableViewCell : UITableViewCell
-
+-(void)refresCell:(VideoModel*)model;
 @end
