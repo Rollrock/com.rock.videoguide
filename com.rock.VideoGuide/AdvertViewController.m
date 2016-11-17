@@ -23,7 +23,7 @@
 @interface AdvertViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong,nonatomic) NSArray * array;
+@property (strong,nonatomic) NSMutableArray * array;
 
 @end
 
@@ -37,7 +37,15 @@
     
     //[self getAdvertReq];
     
-    self.array = [AdvertModel getAdvert];
+    //需要做一个过滤，bundle id在appids里面的 才会显示出来
+    
+    for( AdvertModel * m in [AdvertModel getAdvert] )
+    {
+        if( [m.appids rangeOfString:[[NSBundle mainBundle] bundleIdentifier]].length > 0  || [m.appids isEqualToString:@"ALL"])
+        {
+            [self.array addObject:m];
+        }
+    }
     
 }
 
@@ -106,7 +114,7 @@
 
 
 #pragma setter & getter
-/*
+
 -(NSMutableArray*)array
 {
     if( !_array )
@@ -116,6 +124,5 @@
     
     return _array;
 }
- */
 
 @end

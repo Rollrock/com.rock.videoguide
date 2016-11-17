@@ -58,7 +58,8 @@
 
 +(void)getAdvertReq
 {
-    NSString *urlstring = [NSString stringWithFormat:@"%@",@"http://www.hushup.com.cn/rockweb/Advert/advertindex.php?appid=ALL"];
+    NSString *urlstring = [NSString stringWithFormat:@"http://www.hushup.com.cn/rockweb/Advert/advertindex.php?appid=%@",[[NSBundle mainBundle] bundleIdentifier]];
+    
     [NetWorkUikits requestWithUrl:urlstring param:nil completionHandle:^(id data) {
         NSLog(@"%@", data);
         
@@ -106,10 +107,14 @@
         {
             if( [m.openScore isEqualToString:@"YES"] )
             {
+                NSLog(@"open score");
+                
                 return YES;
             }
         }
     }
+    
+    
     
     return NO;
 }

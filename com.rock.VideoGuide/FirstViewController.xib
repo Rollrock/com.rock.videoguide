@@ -22,14 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibw-WV-eN1">
-                    <rect key="frame" x="0.0" y="60" width="375" height="50"/>
+                    <rect key="frame" x="0.0" y="65" width="375" height="50"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="tVS-9h-KAk"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ITk-u4-qaf">
-                    <rect key="frame" x="0.0" y="110" width="375" height="502"/>
+                    <rect key="frame" x="0.0" y="115" width="375" height="497"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="P2A-Eh-9xo"/>
@@ -43,11 +43,11 @@
                 <constraint firstItem="ibw-WV-eN1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BWw-xd-78g"/>
                 <constraint firstItem="ITk-u4-qaf" firstAttribute="top" secondItem="ibw-WV-eN1" secondAttribute="bottom" id="Sgw-G8-zSo"/>
                 <constraint firstAttribute="trailing" secondItem="ITk-u4-qaf" secondAttribute="trailing" id="Uj3-2D-Lfj"/>
-                <constraint firstItem="ibw-WV-eN1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="bta-KE-o7E"/>
+                <constraint firstItem="ibw-WV-eN1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="bta-KE-o7E"/>
                 <constraint firstAttribute="trailing" secondItem="ibw-WV-eN1" secondAttribute="trailing" id="t7U-A4-5Vh"/>
                 <constraint firstAttribute="bottom" secondItem="ITk-u4-qaf" secondAttribute="bottom" constant="55" id="tJl-xA-ItC"/>
             </constraints>
-            <point key="canvasLocation" x="-608" y="-107"/>
+            <point key="canvasLocation" x="-970" y="-182"/>
         </view>
     </objects>
 </document>

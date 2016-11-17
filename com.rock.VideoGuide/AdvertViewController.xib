@@ -21,7 +21,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版本号:V1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynF-Qw-d39">
-                    <rect key="frame" x="0.0" y="60" width="375" height="50"/>
+                    <rect key="frame" x="0.0" y="65" width="375" height="50"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="w2y-Ap-a34"/>
                     </constraints>
@@ -30,7 +31,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3YL-aS-OGu">
-                    <rect key="frame" x="0.0" y="110" width="375" height="557"/>
+                    <rect key="frame" x="0.0" y="115" width="375" height="552"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="hNh-gc-hQz"/>
@@ -46,7 +47,7 @@
                 <constraint firstItem="3YL-aS-OGu" firstAttribute="top" secondItem="ynF-Qw-d39" secondAttribute="bottom" id="Wyr-PH-Rhn"/>
                 <constraint firstItem="ynF-Qw-d39" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bha-Gk-fNq"/>
                 <constraint firstAttribute="bottom" secondItem="3YL-aS-OGu" secondAttribute="bottom" id="v9Z-EH-PPI"/>
-                <constraint firstItem="ynF-Qw-d39" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="vvV-J1-Ihj"/>
+                <constraint firstItem="ynF-Qw-d39" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="vvV-J1-Ihj"/>
             </constraints>
             <point key="canvasLocation" x="-123" y="-33"/>
         </view>

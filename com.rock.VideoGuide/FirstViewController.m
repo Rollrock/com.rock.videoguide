@@ -178,7 +178,7 @@
         
         UIAlertAction * ok = [UIAlertAction actionWithTitle:@"好评" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
-            //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/ping-guo-shou-ji-zhu-shou/id847434490?l=zh&ls=1&mt=8"] options:@{} completionHandler:nil];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/zhong-zi-sou-suo-shen-qi-zai/id847434490?l=zh&ls=1&mt=8"] options:@{} completionHandler:nil];
         }];
         
         UIAlertAction * cancel = [UIAlertAction actionWithTitle:@"不了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

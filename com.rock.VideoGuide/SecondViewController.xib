@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondViewController">
             <connections>
+                <outlet property="bannerBgView" destination="OaL-Rs-e5T" id="K8H-aO-qx2"/>
                 <outlet property="tableView" destination="EDO-xi-HDM" id="8YQ-zD-bMW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,8 +21,15 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaL-Rs-e5T">
+                    <rect key="frame" x="0.0" y="65" width="375" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="ahq-K4-6vh"/>
+                    </constraints>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EDO-xi-HDM">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="612"/>
+                    <rect key="frame" x="0.0" y="115" width="375" height="497"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="BAf-rI-URV"/>
@@ -31,12 +39,15 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="EDO-xi-HDM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Cg1-M1-jWn"/>
+                <constraint firstItem="OaL-Rs-e5T" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9QD-aT-RHF"/>
+                <constraint firstAttribute="trailing" secondItem="OaL-Rs-e5T" secondAttribute="trailing" id="ASa-kK-zdD"/>
+                <constraint firstItem="OaL-Rs-e5T" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="HZN-Ee-MaE"/>
                 <constraint firstItem="EDO-xi-HDM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PUW-LE-3xy"/>
+                <constraint firstItem="EDO-xi-HDM" firstAttribute="top" secondItem="OaL-Rs-e5T" secondAttribute="bottom" id="UC1-g8-Gse"/>
                 <constraint firstAttribute="trailing" secondItem="EDO-xi-HDM" secondAttribute="trailing" id="eEx-Qk-1Me"/>
                 <constraint firstAttribute="bottom" secondItem="EDO-xi-HDM" secondAttribute="bottom" constant="55" id="yCC-gw-02L"/>
             </constraints>
-            <point key="canvasLocation" x="-369" y="36"/>
+            <point key="canvasLocation" x="-613" y="-75"/>
         </view>
     </objects>
 </document>
