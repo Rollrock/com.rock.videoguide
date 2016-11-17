@@ -23,7 +23,7 @@
 @interface AdvertViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong,nonatomic) NSMutableArray * array;
+@property (strong,nonatomic) NSArray * array;
 
 @end
 
@@ -35,7 +35,9 @@
     self.tableView.rowHeight = 60;
     [self.tableView setTableFooterView:[UIView new]];
     
-    [self getAdvertReq];
+    //[self getAdvertReq];
+    
+    self.array = [AdvertModel getAdvert];
     
 }
 
@@ -45,9 +47,10 @@
 }
 
 #pragma Net
+/*
 -(void)getAdvertReq
 {
-    NSString *urlstring = [NSString stringWithFormat:@"%@",@"http://www.hushup.com.cn/rockweb/index.php?appid=ALL"];
+    NSString *urlstring = [NSString stringWithFormat:@"%@",@"http://www.hushup.com.cn/rockweb/Advert/advertindex.php?appid=ALL"];
     [NetWorkUikits requestWithUrl:urlstring param:nil completionHandle:^(id data) {
         NSLog(@"%@", data);
         
@@ -69,7 +72,7 @@
         
     }];
 }
-
+*/
 
 #pragma UITableView
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -103,6 +106,7 @@
 
 
 #pragma setter & getter
+/*
 -(NSMutableArray*)array
 {
     if( !_array )
@@ -112,5 +116,6 @@
     
     return _array;
 }
+ */
 
 @end

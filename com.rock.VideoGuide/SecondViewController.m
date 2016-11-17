@@ -1,5 +1,5 @@
 //
-//  SecondViewController.m
+//  FirstViewController.m
 //  com.rock.VideoGuide
 //
 //  Created by zhuang chaoxiao on 16/11/14.
@@ -7,8 +7,19 @@
 //
 
 #import "SecondViewController.h"
+#import "MyModel.h"
+#import "FirstTableViewCell.h"
+#import "NetWorkUikits.h"
+#import <AVKit/AVKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import "SVProgressHUD.h"
 
-@interface SecondViewController ()
+@interface SecondViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property(strong,nonatomic) AVPlayer * palyer;
+@property(strong,nonatomic) AVPlayerViewController * palyerVC;
+@property(strong,nonatomic) NSMutableArray * array;
 
 @end
 
@@ -17,6 +28,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.tableView.rowHeight = 70;
+    [self.tableView setTableFooterView:[UIView new]];
+    
+    [self getVideoReq];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +40,94 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma Net
+-(void)getVideoReq
+{
+    [SVProgressHUD showWithStatus:@"Loading..."];
+    
+    NSString *urlstring = [NSString stringWithFormat:@"%@",@"http://www.hushup.com.cn/rockweb/videoguide/hot.php"];
+    [NetWorkUikits requestWithUrl:urlstring param:nil completionHandle:^(id data) {
+        NSLog(@"%@", data);
+        
+        [SVProgressHUD dismiss];
+        
+        if( [data[@"success"] boolValue] != 1 )
+        {
+            
+            return;
+        }
+        
+        [self.array removeAllObjects];
+        for( NSDictionary * dict in data[@"data"])
+        {
+            VideoModel * m = [VideoModel modelFromDict:dict];
+            m.imageUrl = [@"http://www.hushup.com.cn/rockweb" stringByAppendingString:m.imageUrl];
+            [self.array addObject:m];
+        }
+        
+        [self.tableView reloadData];
+        //
+        
+    } failureHandle:^(NSError *error) {
+        
+        [SVProgressHUD showWithStatus:error.description];
+    }];
 }
-*/
+
+
+#pragma UITableView
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.array.count;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString * cellID = @"FirstTableViewCell";
+    
+    FirstTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    
+    if(!cell )
+    {
+        cell = [[[NSBundle mainBundle]loadNibNamed:cellID owner:self options:nil] lastObject];
+    }
+    
+    [cell refresCell:self.array[indexPath.row]];
+    
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.palyerVC = nil;
+    self.palyer = nil;
+    
+    VideoModel * m = self.array[indexPath.row];
+    
+    self.palyer = [AVPlayer playerWithURL:[NSURL URLWithString:[@"http://www.hushup.com.cn/rockweb" stringByAppendingString:m.videoUrl]]];
+    self.palyerVC = [[AVPlayerViewController alloc] init];
+    self.palyerVC.player = self.palyer;
+    self.palyerVC.videoGravity = AVLayerVideoGravityResizeAspect;
+    self.palyerVC.allowsPictureInPicturePlayback = true;    //画中画，iPad可用
+    self.palyerVC.showsPlaybackControls = true;
+    
+    [self.palyerVC.player play];
+    
+    [self.navigationController pushViewController:self.palyerVC animated:YES];
+}
+
+
+#pragma setter & getter
+-(NSMutableArray*)array
+{
+    if( !_array )
+    {
+        _array = [NSMutableArray new];
+    }
+    
+    return _array;
+}
+
+
 
 @end

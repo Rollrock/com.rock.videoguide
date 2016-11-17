@@ -11,8 +11,9 @@
 #import "SecondViewController.h"
 #import "ThirdViewController.h"
 #import "AdvertViewController.h"
+#import "Model.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @property(strong,nonatomic) UITabBarController * tabVC;
 
@@ -80,12 +81,28 @@
     {
         _tabVC = [UITabBarController new];
         _tabVC.viewControllers = @[self.firstVC,self.secondVC,self.advertVC];
+        _tabVC.delegate = self;
+        _tabVC.title =  @"Newest";
     }
     
     return _tabVC;
 }
 
-
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    if(viewController == self.firstVC )
+    {
+        self.tabVC.title = @"Newest";
+    }
+    else if( viewController == self.secondVC )
+    {
+        self.tabVC.title = @"Hot";
+    }
+    else if( viewController == self.advertVC )
+    {
+        self.tabVC.title = @"Setting";
+    }
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
@@ -95,6 +112,9 @@
     self.window.rootViewController = nav;
     
     [self.window makeKeyWindow];
+    
+    //
+    [AdvertModel getAdvertReq];
     
     return YES;
 }

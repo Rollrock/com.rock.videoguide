@@ -20,8 +20,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版本号:V1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynF-Qw-d39">
+                    <rect key="frame" x="0.0" y="60" width="375" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="w2y-Ap-a34"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3YL-aS-OGu">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="110" width="375" height="557"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="hNh-gc-hQz"/>
@@ -32,11 +41,14 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="3YL-aS-OGu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4fW-M2-Mzb"/>
-                <constraint firstItem="3YL-aS-OGu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OyZ-G9-EF4"/>
                 <constraint firstAttribute="trailing" secondItem="3YL-aS-OGu" secondAttribute="trailing" id="P9i-te-llZ"/>
+                <constraint firstAttribute="trailing" secondItem="ynF-Qw-d39" secondAttribute="trailing" id="U36-B3-frS"/>
+                <constraint firstItem="3YL-aS-OGu" firstAttribute="top" secondItem="ynF-Qw-d39" secondAttribute="bottom" id="Wyr-PH-Rhn"/>
+                <constraint firstItem="ynF-Qw-d39" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bha-Gk-fNq"/>
                 <constraint firstAttribute="bottom" secondItem="3YL-aS-OGu" secondAttribute="bottom" id="v9Z-EH-PPI"/>
+                <constraint firstItem="ynF-Qw-d39" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="vvV-J1-Ihj"/>
             </constraints>
-            <point key="canvasLocation" x="-11" y="34"/>
+            <point key="canvasLocation" x="-123" y="-33"/>
         </view>
     </objects>
 </document>

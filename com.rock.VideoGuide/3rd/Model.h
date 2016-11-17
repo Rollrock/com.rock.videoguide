@@ -8,15 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
+
+#define SOTRE_ADVERT @"SOTRE_ADVERT"
+
 @interface Model : NSObject
 
 @end
 
-@interface AdvertModel : NSObject
+@interface AdvertModel : NSObject<NSCoding>
 
 @property(copy,nonatomic)NSString * imgUrl;
 @property(copy,nonatomic)NSString * title;
 @property(copy,nonatomic)NSString * desc;
 @property(copy,nonatomic)NSString * url;
+@property(copy,nonatomic)NSString * openScore;
+@property(copy,nonatomic)NSString * appid;
+@property(copy,nonatomic)NSString * appids;
+
 +(id)modelFromDict:(NSDictionary*)dict;
++(NSArray*)getAdvert;
++(void)getAdvertReq;
++(BOOL)mustScore;
 @end
